@@ -86,13 +86,13 @@ export const WardenPortal: React.FC<Props> = ({
   const currentNav = NAV.find(n => n.key === tab)!;
 
   return (
-    <div style={{ display: "flex", minHeight: "100vh", fontFamily: "'DM Sans', sans-serif", background: "#f0f4f8" }}>
+    <div style={{ display: "flex", height: "100vh", overflow: "hidden", fontFamily: "'DM Sans', sans-serif", background: "#f0f4f8" }}>
 
       {/* ══ SIDEBAR ══ */}
       <aside style={{
         width: 248, flexShrink: 0, background: "var(--blue-dark)",
         display: "flex", flexDirection: "column",
-        position: "fixed", inset: "0 auto 0 0", zIndex: 200,
+        position: "fixed", inset: "0 auto 0 0", zIndex: 200, height: "100vh", overflowY: "auto",
         boxShadow: "4px 0 24px rgba(0,0,0,0.15)",
       }}>
         {/* Brand */}
@@ -204,7 +204,7 @@ export const WardenPortal: React.FC<Props> = ({
       </aside>
 
       {/* ══ MAIN CONTENT ══ */}
-      <div style={{ marginLeft: 248, flex: 1, display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+      <div style={{ marginLeft: 248, flex: 1, display: "flex", flexDirection: "column", height: "100vh", overflow: "hidden" }}>
 
         {/* Top bar */}
         <header style={{
@@ -258,7 +258,7 @@ export const WardenPortal: React.FC<Props> = ({
         </div>
 
         {/* Page body */}
-        <main style={{ flex: 1, padding: "24px 28px" }}>
+        <main style={{ flex: 1, overflowY: "auto", padding: "24px 28px" }}>
 
           {tab === "complaints" && (
             <>
